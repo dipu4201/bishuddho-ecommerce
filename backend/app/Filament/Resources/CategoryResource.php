@@ -18,7 +18,7 @@ class CategoryResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
     
     // ন্যাভিগেশন গ্রুপটি সাময়িকভাবে স্ট্রিং হিসেবে ঠিক রাখতে বা টাইপ সমস্যা এড়াতে নিচের মতো রাখা হয়েছে
-    public static ?string $navigationGroup = 'ক্যাটালগ';
+    //public static ?string $navigationGroup = 'ক্যাটালগ';
     
     protected static \UnitEnum|string|null $navigationGroup = 'ক্যাটালগ';
 
