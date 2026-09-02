@@ -38,7 +38,8 @@ class CategoryResource extends Resource
                     ->required()
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
-                Forms\Components\TextInput::name_bn ?? Forms\Components\TextInput::make('name_bn')
+                //Forms\Components\TextInput::name_bn ?? 
+                                                    Forms\Components\TextInput::make('name_bn')
                     ->label('নাম (বাংলা)'),
                 Forms\Components\TextInput::make('slug')
                     ->required()
