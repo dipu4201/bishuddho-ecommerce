@@ -16,7 +16,10 @@ class CategoryResource extends Resource
     protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
-    protected static ?string $navigationGroup = 'ক্যাটালগ';
+    
+    // ন্যাভিগেশন গ্রুপটি সাময়িকভাবে স্ট্রিং হিসেবে ঠিক রাখতে বা টাইপ সমস্যা এড়াতে নিচের মতো রাখা হয়েছে
+    public static ?string $navigationGroup = 'ক্যাটালগ';
+    
     protected static ?string $navigationLabel = 'ক্যাটাগরি';
     protected static ?string $modelLabel = 'ক্যাটাগরি';
 
@@ -34,7 +37,7 @@ class CategoryResource extends Resource
                     ->required()
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
-                Forms\Components\TextInput::make('name_bn')
+                Forms\Components\TextInput::name_bn ?? Forms\Components\TextInput::make('name_bn')
                     ->label('নাম (বাংলা)'),
                 Forms\Components\TextInput::make('slug')
                     ->required()
